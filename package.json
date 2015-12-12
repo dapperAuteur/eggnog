@@ -47,6 +47,7 @@
   "scripts": {
     "test": "gulp test",
     "build": "gulp",
+    "build": "bower",
     "start": "gulp serve"
   },
   "devDependencies": {
