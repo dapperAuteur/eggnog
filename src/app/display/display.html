@@ -1,7 +1,21 @@
 <div class="container">
 
-  <div class="jumbotron text-center">
-    <h1>Display Page</h1>
+  <div class="row bg-gray text-center">
+    <div class="col-xs-12">
+      <h1>SELECT A SONG:</h1>
+    </div>
+  </div>
+
+  <div class="row add-top">
+    <div class="col-xs-4 card" ng-repeat="(id, song) in display.songs">
+      <div class="card-block text-center">
+        <h4 class="card-title">{{song.name}}</h4>
+        <hr/>
+        <button ui-sref="display.song({songId: id})" class="btn btn-primary">SELECT</button>
+      </div>
+    </div>
+
+    <div class="clearfix"></div>
   </div>
 
 </div>

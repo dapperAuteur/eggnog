@@ -1,3 +1,11 @@
+.add-top {
+  margin-top: 15px;
+}
+
+.add-bottom {
+  margin-bottom: 15px;
+}
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -12,3 +20,14 @@
 .thumbnail img.pull-right {
   width: 50px;
 }
+
+.bg-gray {
+  background: #e0e0e0;
+}
+
+.card {
+  border: 1px solid #afafaf;
+  padding: 15px;
+}
+
+
