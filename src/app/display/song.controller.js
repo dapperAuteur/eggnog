@@ -6,8 +6,13 @@
     .controller('DisplaySongController', DisplaySongController);
 
   /** @ngInject */
-  function DisplaySongController($interval, $scope) {
+  function DisplaySongController($interval, $scope, $stateParams, Song) {
     var vm = this;
+
+    vm.selectedSong = Song.getSongById($stateParams.songId);
+
+    console.log(vm.selectedSong);
+
     var intervalTimer;
     var secondsPerMeasure = 2;
 

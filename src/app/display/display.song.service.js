@@ -2,12 +2,16 @@
   'use strict';
 
   angular.module('eggnog')
-    .factory('Song', ['$firebaseArray', 'FIREBASE_URL', function ($firebaseArray, FIREBASE_URL) {
+    .factory('Song', ['$firebaseArray', '$firebaseObject', 'FIREBASE_URL', function ($firebaseArray, $firebaseObject, FIREBASE_URL) {
       var ref = new Firebase(FIREBASE_URL + "songs");
 
       var obj = {
         getSongs: function() {
           return $firebaseArray(ref);
+        },
+
+        getSongById: function(id) {
+          return $firebaseObject(ref.child(id));
         },
 
         loadSong: function() {
