@@ -47,7 +47,8 @@
   },
   "scripts": {
     "test": "gulp test",
-    "build": "gulp"
+    "build": "gulp",
+    "start": "gulp serve"
   },
   "devDependencies": {
     "estraverse": "~4.1.0",
