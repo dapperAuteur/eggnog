@@ -2,8 +2,15 @@
   <div class="row bg-gray text-center">
     <div class="col-xs-12">
       <h1 ng-click="song.start()">Eggnog Conductor:</h1>
-      <h2>Measures Played: {{song.measuresPlayed}}</h2>
+
+      <div class="add-top add-bottom">
+        <h4>{{song.selectedSong.name}}</h4>
+      </div>
+
+      <h5>Measures Played: {{song.measuresPlayed}}</h5>
     </div>
+
+    <div class="clearfix"></div>
   </div>
 
   <div class="staff">
