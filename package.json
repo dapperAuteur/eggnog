@@ -47,7 +47,7 @@
   "scripts": {
     "test": "gulp test",
     "build": "gulp",
-    "build": "bower"
+    "postinstall": "bower cache clean && bower install"
   },
   "devDependencies": {
     "estraverse": "~4.1.0",
