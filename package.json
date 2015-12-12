@@ -5,7 +5,7 @@
   "scripts": {
     "test": "gulp test",
     "build": "gulp",
-    "start": "gulp serve",
+    "start": "gulp serve"
   },
   "devDependencies": {
     "estraverse": "~4.1.0",
