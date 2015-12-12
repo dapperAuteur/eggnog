@@ -137,7 +137,7 @@ td.blue {
 div.measure {
   position: absolute;
   width: 20%;
-  height: 200px;
+  height: 120px;
   -webkit-transition: all 2s linear;
   -moz-transition: all 2s linear;
   -o-transition: all 2s linear;
