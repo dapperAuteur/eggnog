@@ -32,7 +32,7 @@
         controllerAs: 'select'
       })
       .state('mobile.play', {
-        url: '/play',
+        url: '/play/:note',
         templateUrl: 'app/mobile/play.html',
         controller: 'PlayController',
         controllerAs: 'play'
