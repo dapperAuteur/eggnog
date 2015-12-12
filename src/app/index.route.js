@@ -43,10 +43,15 @@
         controllerAs: 'select'
       })
       .state('mobile.play', {
-        url: '/play/:note',
+        url: '/play/{note}',
         templateUrl: 'app/mobile/play.html',
         controller: 'PlayController',
-        controllerAs: 'play'
+        controllerAs: 'play',
+        resolve: {
+          note: function ($stateParams) {
+            return $stateParams.note;
+          }
+        }
       });
 
     $urlRouterProvider.otherwise('/mobile/select');
