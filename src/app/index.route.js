@@ -26,7 +26,7 @@
         controllerAs: 'select'
       })
       .state('display.song', {
-        url: '/song',
+        url: '/song/:songId',
         templateUrl: 'app/display/song.html',
         controller: 'DisplaySongController',
         controllerAs: 'song'

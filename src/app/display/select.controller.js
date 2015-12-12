@@ -6,11 +6,10 @@
     .controller('DisplaySelectController', DisplaySelectController);
 
   /** @ngInject */
-  function DisplaySelectController(Display) {
+  function DisplaySelectController(Song) {
     var vm = this;
+    //Song.loadSong();
 
-    vm.songs = Display.getSongs();
-
-    console.log(vm.songs);
+    vm.songs = Song.getSongs();
   }
 })();

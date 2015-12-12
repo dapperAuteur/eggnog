@@ -6,36 +6,56 @@
     .controller('DisplaySongController', DisplaySongController);
 
   /** @ngInject */
-  function DisplaySongController($interval, $scope) {
+  function DisplaySongController($interval, $scope, $stateParams, $timeout, Song) {
     var vm = this;
+
+    vm.selectedSong = Song.getSongById($stateParams.songId);
+
+    console.log(vm.selectedSong);
+
     var intervalTimer;
     var secondsPerMeasure = 2;
-
-    var measuresPerPage = 5;
+    vm.measuresPerPage = 5;
+    var song;
 
     function init() {
       vm.playing = false;
       vm.currentMeasures = [];
+      vm.measuresPlayed = 0;
     }
 
     init();
 
     vm.start = function () {
+      song = jingleBells;
+      init();
+      $timeout(function () {
+        vm.play();
+      }, 500);
+    };
+
+    vm.play = function () {
       if (!song || song.length == 0) {
         return;
       }
       vm.playing = true;
-      vm.measuresPlayed = 0;
-      vm.startTime = Date.UTC;
       vm.currentMeasures.push(song[vm.measuresPlayed]);
 
+      if (intervalTimer) {
+        $interval.cancel(intervalTimer);
+      }
       intervalTimer = $interval(function () {
         vm.measuresPlayed++;
-        vm.currentMeasures.push(song[vm.measuresPlayed]);
-        if (song.length > measuresPerPage + 1) {
-          currentMeasures.splice(0,1);
+        if (vm.measuresPlayed < song.length) {
+          vm.currentMeasures.splice(0,0,song[vm.measuresPlayed]);
         }
-      }, secondsPerMeasure);
+        else {
+          vm.currentMeasures.splice(0,0,[]);
+        }
+        if (vm.measuresPlayed - 1 > vm.measuresPerPage) {
+          vm.currentMeasures.pop();
+        }
+      }, secondsPerMeasure*1000);
     };
 
     $scope.$on('$destroy', function () {
@@ -44,150 +64,87 @@
       }
     });
 
-    var song = [
+    var jingleBells = [
       [
-        {
-          note: 0,
-          position: 0
-        },
-        {
-          note: 1,
-          position: .25
-        },
-        {
-          note: 2,
-          position: .5
-        },
-        {
-          note: 3,
-          position: .75
-        }
+        { note: 2, position: 0 },
+        { note: 2, position: 0.25 },
+        { note: 2, position: 0.5 }
       ],
       [
-        {
-          note: 4,
-          position: 0
-        },
-        {
-          note: 5,
-          position: .25
-        },
-        {
-          note: 6,
-          position: .5
-        },
-        {
-          note: 7,
-          position: .75
-        }
+        { note: 2, position: 0 },
+        { note: 2, position: 0.25 },
+        { note: 2, position: 0.5 }
       ],
       [
-        {
-          note: 0,
-          position: 0
-        },
-        {
-          note: 1,
-          position: .25
-        },
-        {
-          note: 2,
-          position: .5
-        },
-        {
-          note: 3,
-          position: .75
-        }
+        { note: 2, position: 0 },
+        { note: 4, position: 0.25 },
+        { note: 0, position: 0.5 },
+        { note: 1, position: 0.75 }
       ],
       [
-        {
-          note: 4,
-          position: 0
-        },
-        {
-          note: 5,
-          position: .25
-        },
-        {
-          note: 6,
-          position: .5
-        },
-        {
-          note: 7,
-          position: .75
-        }
+        { note: 2, position: 0 }
       ],
       [
-        {
-          note: 0,
-          position: 0
-        },
-        {
-          note: 1,
-          position: .25
-        },
-        {
-          note: 2,
-          position: .5
-        },
-        {
-          note: 3,
-          position: .75
-        }
+        { note: 3, position: 0 },
+        { note: 3, position: 0.25 },
+        { note: 3, position: 0.5 },
+        { note: 3, position: 0.75 }
       ],
       [
-        {
-          note: 4,
-          position: 0
-        },
-        {
-          note: 5,
-          position: .25
-        },
-        {
-          note: 6,
-          position: .5
-        },
-        {
-          note: 7,
-          position: .75
-        }
+        { note: 3, position: 0 },
+        { note: 2, position: 0.25 },
+        { note: 2, position: 0.5 },
+        { note: 2, position: 0.75 }
       ],
       [
-        {
-          note: 0,
-          position: 0
-        },
-        {
-          note: 1,
-          position: .25
-        },
-        {
-          note: 2,
-          position: .5
-        },
-        {
-          note: 3,
-          position: .75
-        }
+        { note: 2, position: 0 },
+        { note: 1, position: 0.25 },
+        { note: 1, position: 0.5 },
+        { note: 2, position: 0.75 }
       ],
       [
-        {
-          note: 4,
-          position: 0
-        },
-        {
-          note: 5,
-          position: .25
-        },
-        {
-          note: 6,
-          position: .5
-        },
-        {
-          note: 7,
-          position: .75
-        }
+        { note: 1, position: 0 },
+        { note: 4, position: 0.5 }
+      ],
+      [
+        { note: 2, position: 0 },
+        { note: 2, position: 0.25 },
+        { note: 2, position: 0.5 }
+      ],
+      [
+        { note: 2, position: 0 },
+        { note: 2, position: 0.25 },
+        { note: 2, position: 0.5 }
+      ],
+      [
+        { note: 2, position: 0 },
+        { note: 4, position: 0.25 },
+        { note: 0, position: 0.5 },
+        { note: 1, position: 0.75 }
+      ],
+      [
+        { note: 2, position: 0 }
+      ],
+      [
+        { note: 3, position: 0 },
+        { note: 3, position: 0.25 },
+        { note: 3, position: 0.5 },
+        { note: 3, position: 0.75 }
+      ],
+      [
+        { note: 3, position: 0 },
+        { note: 2, position: 0.25 },
+        { note: 2, position: 0.5 },
+        { note: 2, position: 0.75 }
+      ],
+      [
+        { note: 4, position: 0 },
+        { note: 4, position: 0.25 },
+        { note: 3, position: 0.5 },
+        { note: 1, position: 0.75 }
+      ],
+      [
+        { note: 0, position: 0 },
       ]
     ];
   }
