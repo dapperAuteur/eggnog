@@ -31,3 +31,42 @@
 }
 
 
+
+.staff {
+  position: fixed;
+  left: 0;
+  top: 45%;
+  height: 50px;
+  width: 100%;
+}
+
+.staff-line {
+  height: 20px;
+}
+
+.staff-line hr {
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+.notes {
+  position: fixed;
+  left: 0;
+  top: 45%;
+  height: 120px;
+  width: 100%;
+  background-color: #ff0000;
+  opacity: .5;
+}
+
+div.measure {
+  width: 20%;
+  height: 120px;
+  background:orange;
+  -webkit-transition: all 2s linear;
+  -moz-transition: all 2s linear;
+  -o-transition: all 2s linear;
+  -ms-transition: all 2s linear;
+}
