@@ -7,11 +7,12 @@
   </div>
 
   <div class="row add-top">
-    <div class="col-xs-4 card" ng-repeat="(id, song) in display.songs">
+    <div class="col-xs-4 card" ng-repeat="(id, song) in select.songs">
       <div class="card-block text-center">
-        <h4 class="card-title">{{song.name}}</h4>
+        <h4 class="card-title add-bottom">{{song.name}}</h4>
+        <img ng-src="{{song.img}}" class="add-top img-responsive height150" />
         <hr/>
-        <button ui-sref="display.song({songId: id})" class="btn btn-primary">SELECT</button>
+        <button ui-sref="display.song({songId: song.$id})" class="btn btn-primary">SELECT</button>
       </div>
     </div>
 

@@ -70,3 +70,12 @@ div.measure {
   -o-transition: all 2s linear;
   -ms-transition: all 2s linear;
 }
+
+.card-block img {
+  margin: 0 auto;
+  margin-top: 25px;
+}
+
+.height150 {
+  max-height: 150px;
+}
