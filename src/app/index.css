@@ -73,9 +73,10 @@ td.blue {
 	background-color: #cc0000;
 	color: white;
 }
-.btn-lightred  {
-	background-color: #ff0000;
-	color: white;
+.btn-lightred {
+  background-color: #ff0000;
+  color: white;
+}
 
 .bg-gray {
   background: #e0e0e0;
@@ -105,6 +106,16 @@ td.blue {
   height: 1px;
   background: #333;
   background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+.play-line {
+  position: fixed;
+  width: .5%;
+  opacity: .5;
+  background-color: red;
+  top: 40%;
+  bottom: 35%;
+  left: 49.75%;
 }
 
 .notes {
@@ -141,3 +152,4 @@ div.measure {
 .height150 {
   max-height: 150px;
 }
+

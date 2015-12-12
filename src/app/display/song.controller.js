@@ -6,7 +6,7 @@
     .controller('DisplaySongController', DisplaySongController);
 
   /** @ngInject */
-  function DisplaySongController($interval, $scope) {
+  function DisplaySongController($interval, $scope, $timeout) {
     var vm = this;
     var intervalTimer;
     var secondsPerMeasure = 2;
@@ -16,17 +16,23 @@
     function init() {
       vm.playing = false;
       vm.currentMeasures = [];
+      vm.measuresPlayed = 0;
     }
 
     init();
 
     vm.start = function () {
+      init();
+      $timeout(function () {
+        vm.play();
+      }, 500);
+    };
+
+    vm.play = function () {
       if (!song || song.length == 0) {
         return;
       }
       vm.playing = true;
-      vm.measuresPlayed = 0;
-      vm.startTime = Date.UTC;
       vm.currentMeasures.push(song[vm.measuresPlayed]);
 
       if (intervalTimer) {
