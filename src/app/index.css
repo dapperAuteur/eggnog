@@ -2,6 +2,31 @@
   margin-top: 15px;
 }
 
+.eggnog-title {
+  text-align: center;
+  height: 50px;
+}
+
+.eggnog-notes {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.eggnog-notes .btn-toolbar {
+	height: 25%;
+}
+
+.eggnog-notes .btn {
+	height: 100%;
+}
+
+.eggnog-notes .btn-group {
+	height: 100%;
+}
+
 .add-bottom {
   margin-bottom: 15px;
 }
