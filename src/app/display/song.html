@@ -1,7 +1,8 @@
 <div class="container">
   <div class="row bg-gray text-center">
     <div class="col-xs-12">
-      <h1>Eggnog Orchestrator:</h1>
+      <h1 ng-click="song.start()">Eggnog Conductor:</h1>
+      <h2>Measures Played: {{song.measuresPlayed}}</h2>
     </div>
   </div>
 
@@ -24,9 +25,12 @@
   </div>
 
   <div class="notes">
-    <div ng-repeat="display.currentMeasures">
-
+    <div ng-repeat="measure in song.currentMeasures" class="measure"
+         ng-style="{left: (100-($index*100/song.measuresPerPage))+'%'}">
+      <div ng-repeat="note in measure" class="note"
+           ng-style="{'background-color': 'blue', left: (note.position*100)+'%', bottom: (note.note*10-20)+'px'}"></div>
     </div>
   </div>
 
 </div>
+<div class="play-line"></div>
