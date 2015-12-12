@@ -113,14 +113,20 @@ td.blue {
   top: 45%;
   height: 120px;
   width: 100%;
-  background-color: #ff0000;
   opacity: .5;
 }
 
+.note {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+}
+
 div.measure {
+  position: absolute;
   width: 20%;
   height: 120px;
-  background:orange;
   -webkit-transition: all 2s linear;
   -moz-transition: all 2s linear;
   -o-transition: all 2s linear;

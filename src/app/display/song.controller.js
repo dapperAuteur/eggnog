@@ -11,7 +11,7 @@
     var intervalTimer;
     var secondsPerMeasure = 2;
 
-    var measuresPerPage = 5;
+    vm.measuresPerPage = 5;
 
     function init() {
       vm.playing = false;
@@ -29,13 +29,21 @@
       vm.startTime = Date.UTC;
       vm.currentMeasures.push(song[vm.measuresPlayed]);
 
+      if (intervalTimer) {
+        $interval.cancel(intervalTimer);
+      }
       intervalTimer = $interval(function () {
         vm.measuresPlayed++;
-        vm.currentMeasures.push(song[vm.measuresPlayed]);
-        if (song.length > measuresPerPage + 1) {
-          currentMeasures.splice(0,1);
+        if (vm.measuresPlayed < song.length) {
+          vm.currentMeasures.splice(0,0,song[vm.measuresPlayed]);
         }
-      }, secondsPerMeasure);
+        else {
+          vm.currentMeasures.splice(0,0,[]);
+        }
+        if (vm.measuresPlayed - 1 > vm.measuresPerPage) {
+          vm.currentMeasures.pop();
+        }
+      }, secondsPerMeasure*1000);
     };
 
     $scope.$on('$destroy', function () {
