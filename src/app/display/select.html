@@ -1,0 +1,22 @@
+<div class="container">
+
+  <div class="row bg-gray text-center">
+    <div class="col-xs-12">
+      <h1>SELECT A SONG:</h1>
+    </div>
+  </div>
+
+  <div class="row add-top">
+    <div class="col-xs-4 card" ng-repeat="(id, song) in select.songs">
+      <div class="card-block text-center">
+        <h4 class="card-title add-bottom">{{song.name}}</h4>
+        <img ng-src="{{song.img}}" class="add-top img-responsive height150" />
+        <hr/>
+        <button ui-sref="display.song({songId: song.$id})" class="btn btn-primary">SELECT</button>
+      </div>
+    </div>
+
+    <div class="clearfix"></div>
+  </div>
+
+</div>

@@ -9,21 +9,32 @@
   function routerConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('home', {
-        url: '/',
+        url: '/home',
         templateUrl: 'app/main/main.html',
         controller: 'MainController',
         controllerAs: 'main'
       })
       .state('display', {
+        abstract: true,
         url: '/display',
-        templateUrl: 'app/display/display.html',
-        controller: 'DisplayController',
-        controllerAs: 'display'
+        templateUrl: 'app/display/display.html'
+      })
+      .state('display.select', {
+        url: '/select',
+        templateUrl: 'app/display/select.html',
+        controller: 'DisplaySelectController',
+        controllerAs: 'select'
+      })
+      .state('display.song', {
+        url: '/song/:songId',
+        templateUrl: 'app/display/song.html',
+        controller: 'DisplaySongController',
+        controllerAs: 'song'
       })
       .state('mobile', {
         abstract: true,
         url: '/mobile',
-        templateUrl: 'app/mobile/mobile.html',
+        templateUrl: 'app/mobile/mobile.html'
       })
       .state('mobile.select', {
         url: '/select',
@@ -38,7 +49,7 @@
         controllerAs: 'play'
       });
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/mobile/select');
   }
 
 })();
