@@ -1,0 +1,69 @@
+{
+  "songs": [
+    {
+      "name": "Jingle Bells",
+      "img": "http://ajournalofmusicalthings.com/wp-content/uploads/Jingle-Bells.jpg",
+      "scale": [
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "A",
+        "B",
+        "C"
+      ],
+      "duration": "[calculated based on # sub arrays]",
+      "score": [
+        [{
+          "note": 0,
+          "position": 0.25
+        }]
+      ]
+    }
+  ],
+  "sessions": [{
+    "id": "123",
+    "song": "Jingle Bells",
+    "players": {
+      "Michael": {
+        "score": [
+          [{
+            "note": 5,
+            "position": 0.25
+          }],
+          [{
+            "note": 7,
+            "position": 0.5
+          }]
+        ]
+      },
+      "Nick": {
+        "score": [
+          {
+            "note": 5,
+            "position": 0.25
+          }
+        ]
+      },
+      "Anthony": {
+        "score": [
+          {
+            "note": 5,
+            "position": 0.25
+          }
+        ]
+      }
+    },
+    "combinedScore": [
+      [{
+        "note": 5,
+        "position": 0.25
+      }],
+      [{
+        "note": 7,
+        "position": 0.5
+      }]
+    ]
+  }]
+}
