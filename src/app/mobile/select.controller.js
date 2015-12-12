@@ -6,8 +6,11 @@
     .controller('SelectController', SelectController);
 
   /** @ngInject */
-  function SelectController() {
+  function SelectController($state) {
     var vm = this;
 
+    vm.goToPlayPage = function (note) {
+      $state.go('mobile.play', { "note": note});
+    };
   }
 })();

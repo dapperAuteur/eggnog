@@ -6,8 +6,8 @@
     .controller('PlayController', PlayController);
 
   /** @ngInject */
-  function PlayController() {
+  function PlayController($stateParams) {
     var vm = this;
-
+    vm.note = $stateParams.note;
   }
 })();
