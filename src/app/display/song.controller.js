@@ -15,8 +15,8 @@
 
     var intervalTimer;
     var secondsPerMeasure = 2;
-
     vm.measuresPerPage = 5;
+    var song;
 
     function init() {
       vm.playing = false;
@@ -27,6 +27,7 @@
     init();
 
     vm.start = function () {
+      song = jingleBells;
       init();
       $timeout(function () {
         vm.play();
@@ -63,150 +64,87 @@
       }
     });
 
-    var song = [
+    var jingleBells = [
       [
-        {
-          note: 0,
-          position: 0
-        },
-        {
-          note: 1,
-          position: .25
-        },
-        {
-          note: 2,
-          position: .5
-        },
-        {
-          note: 3,
-          position: .75
-        }
+        { note: 2, position: 0 },
+        { note: 2, position: 0.25 },
+        { note: 2, position: 0.5 }
       ],
       [
-        {
-          note: 4,
-          position: 0
-        },
-        {
-          note: 5,
-          position: .25
-        },
-        {
-          note: 6,
-          position: .5
-        },
-        {
-          note: 7,
-          position: .75
-        }
+        { note: 2, position: 0 },
+        { note: 2, position: 0.25 },
+        { note: 2, position: 0.5 }
       ],
       [
-        {
-          note: 0,
-          position: 0
-        },
-        {
-          note: 1,
-          position: .25
-        },
-        {
-          note: 2,
-          position: .5
-        },
-        {
-          note: 3,
-          position: .75
-        }
+        { note: 2, position: 0 },
+        { note: 4, position: 0.25 },
+        { note: 0, position: 0.5 },
+        { note: 1, position: 0.75 }
       ],
       [
-        {
-          note: 4,
-          position: 0
-        },
-        {
-          note: 5,
-          position: .25
-        },
-        {
-          note: 6,
-          position: .5
-        },
-        {
-          note: 7,
-          position: .75
-        }
+        { note: 2, position: 0 }
       ],
       [
-        {
-          note: 0,
-          position: 0
-        },
-        {
-          note: 1,
-          position: .25
-        },
-        {
-          note: 2,
-          position: .5
-        },
-        {
-          note: 3,
-          position: .75
-        }
+        { note: 3, position: 0 },
+        { note: 3, position: 0.25 },
+        { note: 3, position: 0.5 },
+        { note: 3, position: 0.75 }
       ],
       [
-        {
-          note: 4,
-          position: 0
-        },
-        {
-          note: 5,
-          position: .25
-        },
-        {
-          note: 6,
-          position: .5
-        },
-        {
-          note: 7,
-          position: .75
-        }
+        { note: 3, position: 0 },
+        { note: 2, position: 0.25 },
+        { note: 2, position: 0.5 },
+        { note: 2, position: 0.75 }
       ],
       [
-        {
-          note: 0,
-          position: 0
-        },
-        {
-          note: 1,
-          position: .25
-        },
-        {
-          note: 2,
-          position: .5
-        },
-        {
-          note: 3,
-          position: .75
-        }
+        { note: 2, position: 0 },
+        { note: 1, position: 0.25 },
+        { note: 1, position: 0.5 },
+        { note: 2, position: 0.75 }
       ],
       [
-        {
-          note: 4,
-          position: 0
-        },
-        {
-          note: 5,
-          position: .25
-        },
-        {
-          note: 6,
-          position: .5
-        },
-        {
-          note: 7,
-          position: .75
-        }
+        { note: 1, position: 0 },
+        { note: 4, position: 0.5 }
+      ],
+      [
+        { note: 2, position: 0 },
+        { note: 2, position: 0.25 },
+        { note: 2, position: 0.5 }
+      ],
+      [
+        { note: 2, position: 0 },
+        { note: 2, position: 0.25 },
+        { note: 2, position: 0.5 }
+      ],
+      [
+        { note: 2, position: 0 },
+        { note: 4, position: 0.25 },
+        { note: 0, position: 0.5 },
+        { note: 1, position: 0.75 }
+      ],
+      [
+        { note: 2, position: 0 }
+      ],
+      [
+        { note: 3, position: 0 },
+        { note: 3, position: 0.25 },
+        { note: 3, position: 0.5 },
+        { note: 3, position: 0.75 }
+      ],
+      [
+        { note: 3, position: 0 },
+        { note: 2, position: 0.25 },
+        { note: 2, position: 0.5 },
+        { note: 2, position: 0.75 }
+      ],
+      [
+        { note: 4, position: 0 },
+        { note: 4, position: 0.25 },
+        { note: 3, position: 0.5 },
+        { note: 1, position: 0.75 }
+      ],
+      [
+        { note: 0, position: 0 },
       ]
     ];
   }
