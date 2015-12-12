@@ -8,9 +8,8 @@
   /** @ngInject */
   function DisplaySelectController(Display) {
     var vm = this;
+    //Display.loadSong();
 
     vm.songs = Display.getSongs();
-
-    console.log(vm.songs);
   }
 })();
