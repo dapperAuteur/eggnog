@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('eggnog')
-    .factory('Display', ['$firebaseArray', 'FIREBASE_URL', function ($firebaseArray, FIREBASE_URL) {
+    .factory('Song', ['$firebaseArray', 'FIREBASE_URL', function ($firebaseArray, FIREBASE_URL) {
       var ref = new Firebase(FIREBASE_URL + "songs");
 
       var obj = {
