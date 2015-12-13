@@ -39,7 +39,7 @@
     <div ng-repeat="measure in song.currentMeasures" class="measure"
          ng-style="{left: (100-($index*100/song.measuresPerPage))+'%'}">
       <div ng-repeat="note in measure" class="note"
-           ng-style="{'background-color': song.color(note), left: (note.position*100)+'%', bottom: (note.note*10-20)+'px'}"></div>
+           ng-style="{'background-color': song.color(note), border: 'solid 1px black', left: (note.position*100)+'%', bottom: (note.note*10-20)+'px'}"></div>
     </div>
   </div>
 
