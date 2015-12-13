@@ -62,10 +62,10 @@ gulp.task('serve:e2e-dist', ['build'], function () {
   browserSyncInit(conf.paths.dist, []);
 });
 
-gulp.task('serveprod', function() {
-  connect.server({
-    root: '/#/mobile/select.html',
-    port: process.env.PORT || 5000, // localhost:5000
-    livereload: false
-  });
-});
+// gulp.task('serveprod', function() {
+//   connect.server({
+//     root: '/#/mobile/select.html',
+//     port: process.env.PORT || 5000, // localhost:5000
+//     livereload: false
+//   });
+// });
