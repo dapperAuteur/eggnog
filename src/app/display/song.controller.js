@@ -13,6 +13,20 @@
 
     console.log(vm.selectedSong);
 
+    vm.colors = [
+      'red',
+      'orange',
+      'yellow',
+      'green',
+      'blue',
+      'indigo',
+      'violet',
+      'red'
+    ];
+    vm.color = function (note) {
+      return vm.colors[note.note];
+    };
+
     var intervalTimer;
     var secondsPerMeasure = 2;
     vm.measuresPerPage = 5;

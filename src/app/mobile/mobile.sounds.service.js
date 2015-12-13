@@ -19,9 +19,6 @@
       initAudio();
       var obj = {
         playNote: function(note) {
-          console.log(audio);
-          console.log(audio[note]);
-          console.log(audio[note].play);
           if (note >= 0 && note < 8) {
             audio[note].play();
           }
