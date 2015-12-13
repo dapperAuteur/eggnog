@@ -48,7 +48,7 @@
   "scripts": {
     "test": "gulp test",
     "build": "gulp",
-    "postinstall": "./node_modules/bower install && ./node_modules/grunt install"
+    "postinstall": "./node_modules/bower/bin/bower install && ./node_modules/grunt/bin/grunt install"
   },
   "devDependencies": {
     "estraverse": "~4.1.0",
